@@ -1,0 +1,44 @@
+/* Navbar */
+@media (min-width: 768px) {
+  	div.navbar-header {
+		margin-top: 15px !important;
+		margin-right: 15px !important;
+		margin-left: 10px !important;
+	}
+}
+
+/* Fonts */
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+/* Navbar */
+
+.navbar {
+  border-bottom: 10px #454343 solid;
+}
+
+/* Landing Page */
+.btn-benefits {
+	background: none;
+	border: solid;
+	border-color: grey;
+}
+
+.btn-benefits:hover {
+	background: none;
+	border-color: white;
+}
+
+.btn-sign-up {
+	background: none;
+	background-color: #4fc18c;
+	border: 2px solid #4fc18c;
+	color: white;
+	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
