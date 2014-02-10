@@ -33,6 +33,7 @@ gem 'hpricot'
 gem 'roadie'
 gem 'fastercsv'
 gem 'will_paginate'
+gem 'font-icons-rails', :git=> 'git://github.com/shorelabs/font-icons-rails.git'
 
 
 # Gems used only for assets and not required

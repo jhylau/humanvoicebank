@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar */
 
-.navbar {
+.navbar-fixed-top {
   border-bottom: 10px #454343 solid;
 }
 
@@ -37,8 +37,21 @@ h1, h2, h3, h4, h5, h6 {
 .btn-sign-up {
 	background: none;
 	background-color: #4fc18c;
-	border: 2px solid #4fc18c;
+	border: 2px solid #4fc18c;	
 	color: white;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+
+.marketing .col-lg-4 i {
+	font-size: 40px;
+	color: #4fc18c;
+}
+
+#footer {
+  background-color: white !important;
+  li {
+      display: inline-block;
+  }
 }
