@@ -1,12 +1,20 @@
 /* Navbar */
 @media (min-width: 768px) {
   	div.navbar-header {
-		margin-top: 15px !important;
 		margin-right: 15px !important;
 		margin-left: 10px !important;
 	}
 }
 
+.navbar-fixed-top {
+  border-bottom: 10px #454343 solid;
+}
+
+a.navbar-logo {
+	display: block;
+	margin-top: 15px;
+	margin-left: 5px;
+}
 /* Fonts */
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,13 +24,10 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 }
 
-/* Navbar */
-
-.navbar-fixed-top {
-  border-bottom: 10px #454343 solid;
-}
-
 /* Landing Page */
+.landing-logo {
+	display: inline-block;
+}
 .btn-benefits {
 	background: none;
 	border: solid;
