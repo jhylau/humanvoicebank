@@ -56,6 +56,9 @@ module Cleanpowerperks
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    # Deploy static assets
+    config.serve_static_assets = false
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
