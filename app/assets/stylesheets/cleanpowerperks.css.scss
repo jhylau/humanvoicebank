@@ -2,7 +2,7 @@
 @import "bootstrap/mixins";
 /* Navbar */
 
-$green-theme: #4fc18d;
+$green-theme: #3BB07B;
 
 @media (min-width: 768px) {
   	div.navbar-header {
@@ -29,18 +29,47 @@ a.navbar-logo {
 
 /* Fonts */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, a, p {
 	margin: 0;
 	font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-	font-weight: 700;
-	line-height: 1.2;
 }
 
-/* Landing Page */
+/* Landing Page Images */
 .landing-logo {
 	display: inline-block;
-
 }
+
+.img-landing {
+	background-image: url('/assets/customer_reduced_exposure.png');
+	background-repeat: no-repeat;
+	background-size: 1500px;
+}
+
+@media (min-width: 1154px) {
+	.landing-logo {
+		width: 200px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1153px) {
+	.landing-logo {
+		width: 150px;
+	}
+}
+
+@media (min-width: 429px) and (max-width: 767px) {
+	.landing-logo {
+		width: 150px;
+	}
+}
+
+@media (min-width: 100px) and (max-width: 428px) {
+	.landing-logo {
+		width: 100px;
+	}
+}
+
+
 .btn-benefits {
 	background: none;
 	border: solid;
