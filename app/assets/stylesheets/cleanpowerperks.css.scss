@@ -1,20 +1,32 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 /* Navbar */
+
+$green-theme: #4fc18d;
+
 @media (min-width: 768px) {
   	div.navbar-header {
 		margin-right: 15px !important;
 		margin-left: 10px !important;
 	}
 }
-
+.navbar {
+	line-height: 65px;
+	font-size: 18px;
+}
 .navbar-fixed-top {
   border-bottom: 10px #454343 solid;
 }
 
 a.navbar-logo {
 	display: block;
-	margin-top: 15px;
 	margin-left: 5px;
 }
+
+/*.navbar .nav > li > a {
+	padding: (($navbar-height) / 2 - 1) 10px (($navbar-height) / 2 + 1);
+}*/
+
 /* Fonts */
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Landing Page */
 .landing-logo {
 	display: inline-block;
+
 }
 .btn-benefits {
 	background: none;
@@ -41,8 +54,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-sign-up {
 	background: none;
-	background-color: #4fc18c;
-	border: 2px solid #4fc18c;	
+	background-color: $green-theme;
+	border: 2px solid $green-theme;
 	color: white;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -51,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .marketing .col-lg-4 i {
 	font-size: 40px;
-	color: #4fc18c;
+	color: $green-theme;
 }
 
 #footer {

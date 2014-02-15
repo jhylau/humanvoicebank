@@ -8,11 +8,11 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
  */
 
+ $navbar-height: 65px;
  @import "bootstrap";
  @import "bootstrap/theme";
  @import "font-icons";
-
+ @import "carousel.css.scss";
+ @import "cleanpowerperks.css.scss";
