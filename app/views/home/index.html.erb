@@ -1,6 +1,6 @@
  <!-- Carousel
     ================================================== -->
-    <div id=" " class="carousel slide" data-ride="carousel">
+    <div class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
   <!--     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -15,8 +15,9 @@
               <%= image_tag('cpp_logo_landing_yellow.png', :alt => "Clean Power Perks", :title => "Clean Power Perks", :class=>'img-responsive landing-logo')  %>  
               <h1>Save Money by Buying Clean Energy</h1>
               <p>We reward people and businesses for consciously choosing clean energy</p>
-              <p><a class="btn btn-lg btn-primary btn-benefits" href="#" role="button">View Benefits</a>
-              <a class="btn btn-lg btn-sign-up" href="#" role="button">Sign up today</a></p>
+       <!--        <p><a class="btn btn-lg btn-primary btn-benefits" href="#" role="button">Learn More</a> -->
+              <a class="btn btn-lg" id='btn-sign-up' href="#" role="button">Get Perks Today &raquo;</a>
+              <h4><em>Existing clean energy customers get free access!</em></h4>
             </div>
           </div>
         </div>
@@ -58,20 +59,20 @@
         <div class="col-lg-4">
           <i class="icon-fa-sun"></i>
           <h2>1 - Buy Clean Energy</h2>
-          <p>Easy access to a wide range of energy providers.</p>
-          <p><a class="btn btn-default" href="#" role="button">Sign up now &raquo;</a></p>
+          <p>Easy access to a wide range of providers</p>
+          <p><a class="btn btn-links-2" href="#" role="button">Sign up now &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <i class="icon-fa-gift"></i>
           <h2>2 - Browse Perks</h2>
           <p>Cool brands, green businesses, and awesome deals.</p>
-          <p><a class="btn btn-default" href="#" role="button">Browse Deals &raquo;</a></p>
+          <p><a class="btn btn-links-2" href="#" role="button">Browse Deals &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4"> 
           <i class="icon-fa-money"></i> 
           <h2>3 - Save $$$</h2>
           <p>Helping the planet and saving money at the same time.</p>
-          <p><a class="btn btn-default" href="#" role="button">Learn More &raquo;</a></p>
+          <p><a class="btn btn-links-2" href="#" role="button">Learn More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -81,26 +82,47 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Deal of the Week</h2>
+          <%= image_tag("prana.jpeg", :class=>'img-responsive featurette-image') %>
+        </div><!-- /.col-lg-4 -->
         <div class="col-md-7">
           <h2 class="featurette-heading">If you're going to shop, <span class="text-muted"> #shopclean.</span></h2>
-          <p class="lead">A Clean Power Perks initiative - sustainable businesses and awesome deals.</p>
-         <p><a class="btn btn-sign-up" href="#" role="button">Learn More &raquo;</a></p>
+          <p class="lead">A CleanPowerPerks initiative - green businesses and deals.</p>
+         <p><a class="btn btn-links" href="#" role="button">Learn More &raquo;</a></p>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/assets/shop_clean.jpg" alt="Shop Clean">
-        </div>
-      </div>
+      </div><!-- /.row -->
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
+     <div class="row deals-featurette featurette">
+        <div class="col-md-3">
+          <%= image_tag("cpp_logo_landing_yellow.png", :class=>'img-responsive featurette-image') %>
+           <p><a class="btn btn-links" href="#" role="button">Deal 1 &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+          <%= image_tag("cpp_logo_landing_yellow.png", :class=>'img-responsive featurette-image') %>
+           <p><a class="btn btn-links" href="#" role="button">Deal 2 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-3">
+          <%= image_tag("cpp_logo_landing_yellow.png", :class=>'img-responsive featurette-image') %>
+           <p><a class="btn btn-links" href="#" role="button">Deal 3 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-3">
+          <%= image_tag("cpp_logo_landing_yellow.png", :class=>'img-responsive featurette-image') %>
+           <p><a class="btn btn-links" href="#" role="button">Deal 4 &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+      <!-- <div class="row featurette">
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="/assets/windfarm.png" alt="Generic placeholder image">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Buy clean energy now. <span class="text-muted">Doing good made convenient. </span></h2>
           <p class="lead">Easy access to a wide range of energy providers.</p>
-          <p><a class="btn btn-sign-up" href="#" role="button">Buy Now &raquo;</a></p>
+          <p><a class="btn btn-links" href="#" role="button">Buy Now &raquo;</a></p>
         </div>
       </div>
 
@@ -110,14 +132,14 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Support Our Planet. <span class="text-muted"> All businesses should help.</span></h2>
           <p class="lead">Reach like-minded consumers and promote your brand.</p>
-          <p><a class="btn btn-sign-up" href="#" role="button">Join us &raquo;</a></p>
+          <p><a class="btn btn-links" href="#" role="button">Join us &raquo;</a></p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="/assets/customer.png" alt="Generic placeholder image">
         </div>
       </div>
-
-      <hr class="featurette-divider">
+ --><!-- 
+      <hr class="featurette-divider"> -->
 
       <!-- /END THE FEATURETTES -->
 

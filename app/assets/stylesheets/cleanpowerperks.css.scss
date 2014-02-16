@@ -1,8 +1,10 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
+
 /* Navbar */
 
 $green-theme: #3BB07B;
+$grey-theme: #767676;
 
 @media (min-width: 768px) {
   	div.navbar-header {
@@ -12,7 +14,15 @@ $green-theme: #3BB07B;
 }
 .navbar {
 	line-height: 65px;
-	font-size: 18px;
+	letter-spacing: 0.5px;
+	.nav > li > a {
+		font-family: 'Pompiere', serif;
+		font-size: 22px;
+	}
+	.dropdown-menu > li > a {
+		font-family: 'Pompiere', serif;
+		font-size: 18px;
+	}
 }
 .navbar-fixed-top {
   border-bottom: 10px #454343 solid;
@@ -32,6 +42,7 @@ a.navbar-logo {
 h1, h2, h3, h4, h5, h6, a, p {
 	margin: 0;
 	font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	/*font-family: 'Pompiere', serif;*/
 }
 
 /* Landing Page Images */
@@ -53,13 +64,13 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 @media (min-width: 768px) and (max-width: 1153px) {
 	.landing-logo {
-		width: 150px;
+		width: 125px;
 	}
 }
 
 @media (min-width: 429px) and (max-width: 767px) {
 	.landing-logo {
-		width: 150px;
+		width: 125px;
 	}
 }
 
@@ -69,36 +80,103 @@ h1, h2, h3, h4, h5, h6, a, p {
 	}
 }
 
+/* Landing Page Buttons */
 
-.btn-benefits {
-	background: none;
-	border: solid;
-	border-color: grey;
-}
-
-.btn-benefits:hover {
-	background: none;
-	border-color: white;
-}
-
-.btn-sign-up {
+#btn-sign-up {
 	background: none;
 	background-color: $green-theme;
-	border: 2px solid $green-theme;
 	color: white;
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	&:hover {
+		color: black;
+	}
 }
+
+.btn-links {
+	background: none;
+	background-color: $green-theme;
+	color: white;
+	font-size: 1.5rem;
+	&:hover {
+		color: black;
+		background-color: $green-theme;
+	}
+}
+
+.btn-links-2 {
+	background: none;
+	background-color: $grey-theme;
+	color: white;
+	font-size: 1.5rem;
+	&:hover {
+		color: black;
+		background-color: $grey-theme;
+	}
+}
+
 
 
 .marketing .col-lg-4 i {
-	font-size: 40px;
+	font-size: 50px;
 	color: $green-theme;
 }
 
+/* LANDING PAGE DEALS */
+
+div.featurette {
+	h1, h2 {
+		/*font-family: pompiere !important;*/
+		font-size: 50px;
+		color: black;
+	}
+	h2, p {
+		/*margin-top: 10px;*/
+	}
+	img {
+		display: inline;
+		width: auto;
+	}
+}
+/*
+div.deals-featurette {
+	text-align: center;
+}*/
+
+/* FOOTER */
+
 #footer {
-  background-color: white !important;
+  background-color: #454343 !important;
+  padding-top: 20px;
+  padding-bottom: 10px;
   li {
-      display: inline-block;
+      display: block;
+      h3 {
+      	font-family: 'Pompiere', serif;
+      	margin-bottom: 5px;
+      	color: white;
+	 	}
+	 	a.email {
+	 		color: white;
+	 	}
+	 	a.icon {
+	 		font-size: 30px;
+	 		color: white;
+	 	}
+	 	a.icon:hover {
+	 		text-decoration: none;
+	 		color: grey;
+	 	}
+	 	h5 {
+	 		color: grey;
+	 		font-size: 12px;
+	 		margin-top: 0.4rem;
+	 	}
+  	}
+  a, p {
+      color: rgb(205, 205, 205);
+  }
+  a.email {
+  	color: blue;
   }
 }

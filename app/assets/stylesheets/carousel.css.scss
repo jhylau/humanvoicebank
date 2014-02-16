@@ -3,7 +3,6 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
   color: #5a5a5a;
 }
 
@@ -75,7 +74,8 @@ body {
   margin-bottom: 20px;
 }
 .marketing h2 {
-  font-weight: normal;
+  /*font-weight: normal;*/
+  margin-bottom: 10px;
 }
 .marketing .col-lg-4 p {
   margin-left: 10px;
@@ -86,7 +86,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 15px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -97,6 +97,9 @@ body {
 }
 
 
+.featurette {
+  text-align: center;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -133,7 +136,6 @@ body {
     font-size: 21px;
     line-height: 1.4;
   }
-
   .featurette-heading {
     font-size: 50px;
   }
@@ -142,6 +144,6 @@ body {
 
 @media (min-width: 992px) {
   .featurette-heading {
-    /*margin-top: 120px;*/
+    margin-top: 0px;
   }
 }

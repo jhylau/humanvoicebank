@@ -11,6 +11,8 @@
     <meta name="copyright"          content="Copyright Clean Power Perks &copy;2013"/>
     <%= favicon_link_tag 'favicon.png' %>
     <%= display_meta_tags :site => 'Clean Power Perks' %>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pompiere">
+
 </head>
 <body>
       <div class="container">
@@ -28,7 +30,8 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="#about">How it works</a></li>
-                <li class="dropdown">
+                <li><a href="#about">Get Perks</a></li>
+                <!-- <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Perks <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
@@ -39,28 +42,59 @@
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
                   </ul>
-                </li>
+                </li> -->
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Businesses <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Businesses <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">For Energy Providers</a></li>
                     <li><a href="#">For Consumer Brands</a></li>
                   </ul>
                 </li>
+                <li><a href="#about">Contact</a></li>
               </ul>
+               <ul class="nav navbar-nav pull-right">
+                  <li><a href="#">Sign Up</a></li>
+                  <li><a href="#">Log In</a></li>
+                </ul>
             </div>
           </div>
         </div>
       </div>
 	<%= yield %> 
 	<footer>
-	<div class="navbar footer" id="footer">
+	<div class="footer" id="footer">
 	    <footer class="container">
-	      <ul class ="footer-ul nav span12">
-	      <li>&copy; 2014 CleanPowerPerks, LLC.</li>
-	      <li><a href="#">Privacy</a></li>
-	      <li><a href="#">Terms</a></li>
-	      </ul>
+        <div class="row">
+  	      <div class="col-md-4">
+          <ul>
+  	      <li><h3>CleanPowerPerks</h3></li>
+  	      <li><a href="#">Mission Statement</a></li>
+  	      <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Help</a></li>
+  	      </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+            <li><h3>Let's keep in touch</h3></li>
+            <li><p>Contact us at <a href="mailto:info@cleanpowerperks.com" class="email">info@cleanpowerperks.com</a><br>or visit us at:</p></li>
+            <li>
+              <a class="icon icon-fa-twitter"></a>
+              <a class="icon icon-fa-facebook"></a>
+              <a class="icon icon-fa-linkedin"></a>
+            </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+            <li><h3>Interested in receiving updates on latest perks and deals?</h3></li>
+            <li><a class='btn btn-danger btn-medium'>Sign Up Now &raquo;</a></li>
+            <li>
+              <h5>Copyright © 2014 CleanPowerPerks. All rights reserved.</h5>
+            </li>
+            </ul>
+          </div>
+        </div>
 	    </footer>
 	</div>
 	</footer>

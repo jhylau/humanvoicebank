@@ -12,8 +12,6 @@ gem 'jquery-rails'
 gem 'json'
 gem 'rails_admin'
 gem 'mail'
-gem "sitemap_generator"
-gem 'newrelic_rpm'
 gem 'jquery-ui-rails'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'fancybox-rails'
@@ -28,7 +26,6 @@ gem 'twitter', '~> 5.0.0'
 # gem 'tweetstream' will need to wait for update
 gem "sitemap_generator"
 gem 'newrelic_rpm'
-gem 'meta-tags', :require => 'meta_tags'
 gem 'hpricot'
 gem 'roadie'
 gem 'fastercsv'
@@ -46,8 +43,6 @@ group :assets do
 
   gem 'uglifier'
 end
-
-gem 'jquery-rails'
 
 group :development do
   gem 'capistrano', :require => false
