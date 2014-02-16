@@ -4,12 +4,15 @@
 /* Navbar */
 
 $green-theme: #3BB07B;
-$grey-theme: #767676;
+$grey-theme: #8C8A8A;
 
 @media (min-width: 768px) {
   	div.navbar-header {
 		margin-right: 15px !important;
 		margin-left: 10px !important;
+	}
+	.navbar-right {
+		float: right !important;
 	}
 }
 .navbar {
