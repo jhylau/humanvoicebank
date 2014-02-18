@@ -4,7 +4,10 @@
 /* Navbar */
 
 $green-theme: #3BB07B;
-$grey-theme: #8C8A8A;
+$green-theme-top: #3BB07B;
+$green-theme-bottom: #3BB07B;
+$grey-theme-top: #BABABA;
+$grey-theme-bottom: #4F4E4E;
 
 @media (min-width: 768px) {
   	div.navbar-header {
@@ -18,6 +21,16 @@ $grey-theme: #8C8A8A;
 .navbar {
 	line-height: 65px;
 	letter-spacing: 0.5px;
+	.nav > li {
+		&:hover {
+			background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
+			background-image: linear-gradient(to bottom, #ebebeb 0%, #f3f3f3 100%);
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEBEBEB', endColorstr='#FFF3F3F3', GradientType=0);
+			-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+			box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+		}
+	}
 	.nav > li > a {
 		font-family: 'Pompiere', serif;
 		font-size: 22px;
@@ -86,7 +99,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 /* Landing Page Buttons */
 
-#btn-sign-up {
+#btn-sign-up, .btn-links {
 	background: none;
 	background-color: $green-theme;
 	color: white;
@@ -98,24 +111,24 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .btn-links {
-	background: none;
-	background-color: $green-theme;
-	color: white;
 	font-size: 1.5rem;
 	&:hover {
-		color: black;
 		background-color: $green-theme;
 	}
 }
 
 .btn-links-2 {
 	background: none;
-	background-color: $grey-theme;
-	color: white;
-	font-size: 1.5rem;
+	background-image: -webkit-linear-gradient(top, $grey-theme-top 0%, $grey-theme-bottom 100%);
+			background-image: linear-gradient(to bottom, $grey-theme-top 0%, $grey-theme-bottom 100%);
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEBEBEB', endColorstr='#FFF3F3F3', GradientType=0);
+			-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+			box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+			color: white;
+			font-size: 1.5rem;
 	&:hover {
 		color: black;
-		background-color: $grey-theme;
 	}
 }
 
