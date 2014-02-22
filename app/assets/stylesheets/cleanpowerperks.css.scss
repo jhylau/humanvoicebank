@@ -20,7 +20,6 @@ $grey-theme-bottom: #4F4E4E;
 }
 .navbar {
 	line-height: 65px;
-	letter-spacing: 0.5px;
 	background-color: white;
 	.nav > li {
 		&:hover {
@@ -35,6 +34,7 @@ $grey-theme-bottom: #4F4E4E;
 	.nav > li > a {
 		font-family: 'Pompiere', "'Gotham SSm A', 'Gotham SSm B'", 'Helvetica Neue', Arial, Helvetica, sans-serif;
 		font-size: 22px;
+		letter-spacing: 0.5px;
 		color: #303030;
 	}
 	.dropdown-menu > li > a {
@@ -46,9 +46,14 @@ $grey-theme-bottom: #4F4E4E;
   border-bottom: 2px #454343 solid;
 }
 
+div.navbar-header {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
 a.navbar-logo {
 	display: block;
-	margin-left: 5px;
+	margin-left: 1px;
 }
 
 /*.navbar .nav > li > a {
@@ -61,7 +66,6 @@ h1, h2, h3, h4, h5, h6, a, p {
 	margin: 0;
 	font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	text-rendering: optimizeLegibility;
-	letter-spacing: -1px;
 }
 
 /* Landing Page Images */
@@ -79,42 +83,22 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 @media (min-width: 1154px) {
 	.landing-logo {
-		width: 200px;
+		width: 250px;
 	}
-	.navbar-button {
-	padding: (($navbar-height - 34) / 2 ) 10px (($navbar-height - 34) / 2 ) !important;
-	btn {
-		font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-	}
-	&:hover {
-		background-color: inherit !important;
-	}
-}
-
 }
 
 @media (min-width: 768px) and (max-width: 1153px) {
 	.landing-logo {
-		width: 125px;
-	}
-	.navbar-button {
-		padding: (($navbar-height - 34) / 2 ) 10px (($navbar-height - 34) / 2 ) !important;
-		btn {
-			font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-		}
-		&:hover {
-			background-color: inherit !important;
-		}
+		width: 200px;
 	}
 }
 
 @media (min-width: 429px) and (max-width: 767px) {
 	.landing-logo {
-		width: 125px;
+		width: 200px;
 	}
 	.navbar-button {
 		btn {
-			font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 			width: 100%;
 		}
 	}
@@ -122,11 +106,10 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 @media (min-width: 100px) and (max-width: 428px) {
 	.landing-logo {
-		width: 100px;
+		width: 200px;
 	}
 	.navbar-button {
 		btn {
-			font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 			width: 100%;
 		}
 	}
@@ -143,6 +126,21 @@ h1, h2, h3, h4, h5, h6, a, p {
 	&:hover {
 		background-color: #127875;
 		color: white;
+	}
+}
+#btn-sign-up {
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.navbar-button {
+	padding: (($navbar-height - 34) / 2 ) 10px (($navbar-height - 34) / 2 ) !important;
+	btn {
+		font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		letter-spacing: 0px;
+	}
+	&:hover {
+		background-color: inherit !important;
 	}
 }
 
