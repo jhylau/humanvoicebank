@@ -36,8 +36,8 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 500px;
-  margin-bottom: 20px;
+  height: 552px;
+  border-bottom: 2px #454343 solid;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -46,15 +46,37 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
+  height: 550px;
   background-color: #777;
 }
+
+.carousel-control.left {
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0.0001)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0,0,0,0.5) 0), color-stop(rgba(0,0,0,0.0001) 100%));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.0001) 100%);
+  background-repeat: repeat-x;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
+}
+.carousel-control.right {
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0,0,0,0.0001)), to(rgba(0,0,0,0.5)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0,0,0,0.0001) 0), color-stop(rgba(0,0,0,0.5) 100%));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.5) 100%);
+  background-image: linear-gradient(to right, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.5) 100%);
+  background-repeat: repeat-x;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
+}
+.carousel-control:hover, .carousel-control:focus {
+  opacity: 0.5;
+}
+
 .carousel-inner > .item > img {
   position: absolute;
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 500px;
+  height: 550px;
+  margin-top: 65px;
 }
 
 
@@ -73,20 +95,24 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
-.marketing h2 {
-  /*font-weight: normal;*/
-  margin-bottom: 10px;
-}
+
 .marketing .col-lg-4 p {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.featurette-image {
+  display: inline-block;
+  margin: 0 autos;
 }
 
 /* Featurettes
 ------------------------- */
 
 .featurette-divider {
-  margin: 15px 0; /* Space out the Bootstrap <hr> more */
+  border-width: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /* Thin out the marketing headings */
@@ -94,11 +120,21 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+  text-align: center;
 }
 
+#featurette-sub-heading {
+  margin-bottom: 10px;
+}
 
-.featurette {
+div.featurette {
+  margin-top: 50px;
+  margin-bottom: 80px;
   text-align: center;
+  img {
+    display: inline;
+    width: auto;
+  }
 }
 
 /* RESPONSIVE CSS
@@ -138,6 +174,7 @@ body {
   }
   .featurette-heading {
     font-size: 50px;
+    margin-bottom: 40px;
   }
 
 }
@@ -145,5 +182,6 @@ body {
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 0px;
+    margin-bottom: 40px;
   }
 }

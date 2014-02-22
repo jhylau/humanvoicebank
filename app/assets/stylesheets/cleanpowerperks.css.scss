@@ -3,9 +3,9 @@
 
 /* Navbar */
 
-$green-theme: #3BB07B;
-$green-theme-top: #3BB07B;
-$green-theme-bottom: #3BB07B;
+$green-theme: #009a96;
+$green-theme-top: #009a96;
+$green-theme-bottom: #009a96;
 $grey-theme-top: #BABABA;
 $grey-theme-bottom: #4F4E4E;
 
@@ -21,6 +21,7 @@ $grey-theme-bottom: #4F4E4E;
 .navbar {
 	line-height: 65px;
 	letter-spacing: 0.5px;
+	background-color: white;
 	.nav > li {
 		&:hover {
 			background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
@@ -32,17 +33,17 @@ $grey-theme-bottom: #4F4E4E;
 		}
 	}
 	.nav > li > a {
-		font-family: 'Pompiere', serif;
+		font-family: 'Pompiere', 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 		font-size: 22px;
 		color: #303030;
 	}
 	.dropdown-menu > li > a {
-		font-family: 'Pompiere', serif;
+		font-family: 'Pompiere', 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 		font-size: 18px;
 	}
 }
 .navbar-fixed-top {
-  border-bottom: 10px #454343 solid;
+  border-bottom: 2px #454343 solid;
 }
 
 a.navbar-logo {
@@ -59,7 +60,9 @@ a.navbar-logo {
 h1, h2, h3, h4, h5, h6, a, p {
 	margin: 0;
 	font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-	/*font-family: 'Pompiere', serif;*/
+}
+h1, h2, h3 {
+	font-weight: 700;	
 }
 
 /* Landing Page Images */
@@ -68,9 +71,11 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .img-landing {
-	background-image: url('/assets/customer_reduced_exposure.png');
+	background-image: url('/assets/smiling_girl.jpg');
 	background-repeat: no-repeat;
-	background-size: 1500px;
+	background-size: 1140px;
+	background-position: center;
+	background-color: white;
 }
 
 @media (min-width: 1154px) {
@@ -106,29 +111,44 @@ h1, h2, h3, h4, h5, h6, a, p {
 	font-size: 2.5rem;
 	margin-bottom: 0.5rem;
 	&:hover {
-		color: black;
+		background-color: #127875;
+		color: white;
+	}
+}
+
+#sign-up-footer {
+	color: white !important;
+}
+
+.navbar-button {
+	padding: (($navbar-height - 34) / 2 ) 10px (($navbar-height - 34) / 2 ) !important;
+	btn {
+		font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	}
+	&:hover {
+		background-color: inherit !important;
 	}
 }
 
 .btn-links {
 	font-size: 1.5rem;
-	&:hover {
-		background-color: $green-theme;
-	}
 }
 
 .btn-links-2 {
+	border: none;
 	background: none;
 	background-image: -webkit-linear-gradient(top, $grey-theme-top 0%, $grey-theme-bottom 100%);
-			background-image: linear-gradient(to bottom, $grey-theme-top 0%, $grey-theme-bottom 100%);
-			background-repeat: repeat-x;
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEBEBEB', endColorstr='#FFF3F3F3', GradientType=0);
-			-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
-			box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
-			color: white;
-			font-size: 1.5rem;
+	background-image: linear-gradient(to bottom, $grey-theme-top 0%, $grey-theme-bottom 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEBEBEB', endColorstr='#FFF3F3F3', GradientType=0);
+	-webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
+	color: white;
+	font-size: 1.5rem;
 	&:hover {
-		color: black;
+		background-image: linear-gradient(to bottom, grey 0%, grey 100%);
+		border: none;
+		color: white;
 	}
 }
 
@@ -139,27 +159,6 @@ h1, h2, h3, h4, h5, h6, a, p {
 	color: $green-theme;
 }
 
-/* LANDING PAGE DEALS */
-
-div.featurette {
-	h1, h2 {
-		/*font-family: pompiere !important;*/
-		font-size: 50px;
-		color: black;
-	}
-	h2, p {
-		/*margin-top: 10px;*/
-	}
-	img {
-		display: inline;
-		width: auto;
-	}
-}
-/*
-div.deals-featurette {
-	text-align: center;
-}*/
-
 /* FOOTER */
 
 #footer {
@@ -169,7 +168,7 @@ div.deals-featurette {
   li {
       display: block;
       h3 {
-      	font-family: 'Pompiere', serif;
+      	font-family: 'Pompiere', 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
       	margin-bottom: 5px;
       	color: white;
 	 	}
