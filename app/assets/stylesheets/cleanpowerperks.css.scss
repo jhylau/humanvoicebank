@@ -33,7 +33,7 @@ $grey-theme-bottom: #4F4E4E;
 		}
 	}
 	.nav > li > a {
-		font-family: 'Pompiere', 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		font-family: 'Pompiere', "'Gotham SSm A', 'Gotham SSm B'", 'Helvetica Neue', Arial, Helvetica, sans-serif;
 		font-size: 22px;
 		color: #303030;
 	}
@@ -60,9 +60,8 @@ a.navbar-logo {
 h1, h2, h3, h4, h5, h6, a, p {
 	margin: 0;
 	font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-}
-h1, h2, h3 {
-	font-weight: 700;	
+	text-rendering: optimizeLegibility;
+	letter-spacing: -1px;
 }
 
 /* Landing Page Images */
