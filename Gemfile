@@ -45,8 +45,7 @@ group :assets do
 end
 
 group :development do
-  gem 'capistrano', :require => false
-  gem 'capistrano-ext', :require => false
+  gem 'rack-mini-profiler'
 end
 
 group :test do
