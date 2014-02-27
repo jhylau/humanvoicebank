@@ -3,7 +3,8 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
-$carousel-height: 600px;
+$carousel-height: 550px;
+$yellow-theme: #fad40d;
 
 body {
   color: #5a5a5a;
@@ -54,20 +55,22 @@ body {
 }
 
 .carousel-control.left {
-  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0.0001)));
+  /*background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0.0001)));
   background-image: -webkit-linear-gradient(left, color-stop(rgba(0,0,0,0.5) 0), color-stop(rgba(0,0,0,0.0001) 100%));
   background-image: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.0001) 100%);
   background-repeat: repeat-x;
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)*/
+  background: #61504d;
 }
 .carousel-control.right {
-  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0,0,0,0.0001)), to(rgba(0,0,0,0.5)));
+  /*background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0,0,0,0.0001)), to(rgba(0,0,0,0.5)));
   background-image: -webkit-linear-gradient(left, color-stop(rgba(0,0,0,0.0001) 0), color-stop(rgba(0,0,0,0.5) 100%));
   background-image: -moz-linear-gradient(left, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.5) 100%);
   background-image: linear-gradient(to right, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.5) 100%);
   background-repeat: repeat-x;
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)*/
+  background: #61504d;
 }
 .carousel-control:hover, .carousel-control:focus {
   opacity: 0.5;
@@ -94,14 +97,21 @@ body {
 }
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.marketing div {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.marketing .col-lg-4 p {
+.marketing div p {
   margin-left: 10px;
   margin-right: 10px;
+  color: rgb(201, 196, 196);
+}
+
+
+.marketing div > i {
+  font-size: 50px;
+  color: $yellow-theme;
 }
 
 .featurette-image {
@@ -131,8 +141,8 @@ body {
 }
 
 div.featurette {
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
   img {
     display: inline;
@@ -182,7 +192,7 @@ div.featurette {
   }
   .featurette-heading {
     font-size: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
 }
@@ -190,6 +200,6 @@ div.featurette {
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
