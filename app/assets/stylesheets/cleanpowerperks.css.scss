@@ -14,6 +14,7 @@ $grey-theme-top: #BABABA;
 $grey-theme-bottom: #4F4E4E;
 $font-1: 'Pompiere', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 $font-2: "Open Sans",Verdana,Tahoma,"DejaVu Sans",sans-serif;
+$font-3: OpenSansLight,'Helvetica Neue',Arial,Helvetica,FreeSans,sans-serif;
 
 @media (min-width: 768px) {
   	div.navbar-header {
@@ -27,7 +28,7 @@ $font-2: "Open Sans",Verdana,Tahoma,"DejaVu Sans",sans-serif;
 
 div.navbar-secondary {
 	margin-top: 25px;
-	line-height: 65px;
+	line-height: 50px;
 	box-shadow: 0 0 3px #999;
 	/*border-bottom: 2px #454343 solid;*/
 }
@@ -40,13 +41,28 @@ div.navbar-primary {
 	box-shadow: 0 0 3px #999;
 }
 
+div.navbar-collapse {
+	background-image: url("/assets/navbar-background.png");
+}
+
 ul.navbar-nav-primary {
 	min-height: 30px;
 	text-align: center;
+	li#contact {
+		background-color: #e19650;
+		a {
+			color: white;
+			font-family: $font-1;
+			font-size: 13px;
+		}
+	}
 	li {
+		display: inline-block;
 		a {
 			padding: 0 5px 0 5px;
-			font-size: 16px !important;
+			b {
+				font-size: 17px;
+			}
 			img {
 				vertical-align: middle;
 			}
@@ -108,7 +124,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .img-landing {
-	background-image: url('/assets/smiling_girl.jpg');
+	background-image: url('/assets/family_jump.jpg');
 	background-repeat: no-repeat;
 	background-size: 1440px;
 	background-position: center;
@@ -117,7 +133,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 @media (min-width: 1154px) {
 	.landing-logo {
-		width: 200px;
+		width: 250px;
 	}
 }
 
@@ -177,13 +193,12 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .navbar-button {
-	padding: (($navbar-height - 34) / 2 ) 10px (($navbar-height - 34) / 2 ) !important;
+	&:hover {
+		background-color: transparent;
+	}
 	btn {
 		font-family: $font-2;
 		letter-spacing: 0px;
-	}
-	&:hover {
-		background-color: inherit !important;
 	}
 }
 
@@ -224,9 +239,25 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .third-section {
-	background: #009a96;
+	background-image: url("/assets/navbar-top-background.png");
 	color: white;
 }
+/* THUMBNAILS */
+.thumbnail {
+	cursor: hand;
+	.perk-image-container {
+		height: 200px;
+	}
+	.perk-image-container .img-responsive {
+		display: block;
+		width: auto;
+		min-height: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+	}
+}
+
+
 
 /* FOOTER */
 
