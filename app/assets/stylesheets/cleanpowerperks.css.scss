@@ -2,10 +2,6 @@
 @import "bootstrap/mixins";
 @import "variables/global";
 
-/* General */
-body {
-	background-image: url("/assets/body-background.png");
-}
 /* Navbar */
 
 $green-theme: #009a96;
@@ -237,6 +233,10 @@ h1, h2, h3, h4, h5, h6, a, p {
 .second-section {
 	background: rgb(52, 40, 40);
 	color: white;
+}
+
+.fourth-section {
+	background-image: url("/assets/body-background.png");
 }
 
 .third-section {
