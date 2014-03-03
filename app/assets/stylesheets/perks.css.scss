@@ -1,0 +1,105 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "variables/global";
+
+/** GENERAL */
+
+div.perks {
+	margin-top: ($full-navbar-height + 20px);
+	text-align: center;
+	background-image: url("/assets/body-background.png");
+	margin-bottom: 20px;
+}
+
+body {
+	background-image: url("/assets/balloons.jpg");
+	/*background-repeat: no-repeat;*/
+	background-position: center;
+	top: 75px;
+	background-attachment: scroll;
+}
+
+html, body, .container-fluid, .row {
+    height: 100%;
+}
+
+div.perks-heading {
+	margin-bottom: 15px;
+	h1 {	
+		text-align: center;
+		margin-top: 20px;
+		padding-bottom: 10px;
+	}
+}
+.sidebar {
+  	background-color: white;
+  	.tab-pane {
+	  h2.tab-title {
+	  	margin-top: 20px;
+	  	margin-bottom: 20px;
+	  	padding-bottom: 5px;
+	  	/*border-bottom: 2px solid #d8d8d8;*/
+	  }
+	  a {
+	  	cursor: pointer; cursor: hand;
+	  	display: block;
+	  	margin-top: 10px;
+	  	margin-bottom: 10px;
+	  }
+	}
+}
+
+/* Sidebar */
+.perks-sidebar {
+	text-align: left;
+}
+
+.tab-title {
+
+}
+
+
+/* THUMBNAILS */
+.content {
+	min-height: 800px;
+	.thumbnail {
+		&:hover {
+			background-color: lightgrey;
+		}
+		cursor: pointer; cursor: hand;
+		text-align: center;
+		.perk-image-container {
+			height: 200px;
+		}
+		.perk-image-container .img-responsive {
+			display: block;
+			width: auto;
+			min-height: 100%;
+			max-height: 100%;
+			margin: 0 auto;
+		}
+		div.caption h3 {
+		  	font-size: 20px;
+		 }
+	}
+
+
+}
+@media (min-width: 992px) {
+  .sidebar {
+    position: absolute;
+    /*bottom: $footer-height;*/
+    z-index: 1;
+    display: block;
+    background: transparent;
+  }
+}
+
+@media (max-width: 767px) {
+	div.content {
+		text-align: center;
+		.thumbnails div {
+			width: 100%;
+		}
+	}
+}

@@ -1,5 +1,6 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
+@import "variables/global";
 
 /* General */
 body {
@@ -242,21 +243,6 @@ h1, h2, h3, h4, h5, h6, a, p {
 	background-image: url("/assets/navbar-top-background.png");
 	color: white;
 }
-/* THUMBNAILS */
-.thumbnail {
-	cursor: hand;
-	.perk-image-container {
-		height: 200px;
-	}
-	.perk-image-container .img-responsive {
-		display: block;
-		width: auto;
-		min-height: 100%;
-		max-height: 100%;
-		margin: 0 auto;
-	}
-}
-
 
 
 /* FOOTER */
