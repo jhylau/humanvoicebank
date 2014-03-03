@@ -5,7 +5,7 @@ gem 'rails', '4.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'carrierwave'
 gem 'pg'
 gem 'devise'
 gem 'jquery-rails'
@@ -15,6 +15,8 @@ gem 'mail'
 gem 'jquery-ui-rails'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'fancybox-rails'
+gem 'friendly_id'
+gem 'pg_search'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'omniauth-twitter'

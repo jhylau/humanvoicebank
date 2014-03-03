@@ -34,6 +34,11 @@ GEM
       sass (~> 3.2)
     buftok (0.2.0)
     builder (3.1.4)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -71,6 +76,8 @@ GEM
       tzinfo
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
+    friendly_id (5.0.3)
+      activerecord (>= 4.0.0)
     haml (4.0.5)
       tilt
     hashie (2.0.5)
@@ -124,6 +131,10 @@ GEM
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    pg_search (0.7.3)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyglot (0.3.3)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -257,12 +268,14 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.1.0)
+  carrierwave
   coffee-rails
   devise
   factory_girl_rails
   fancybox-rails
   fastercsv
   fb_graph
+  friendly_id
   hpricot
   jquery-rails
   jquery-ui-rails
@@ -274,6 +287,7 @@ DEPENDENCIES
   newrelic_rpm
   omniauth-twitter
   pg
+  pg_search
   pry-doc
   pry-rails
   rack-mini-profiler
