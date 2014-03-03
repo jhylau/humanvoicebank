@@ -1,10 +1,9 @@
-class Perk < ActiveRecord::Base
+class Brand < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
-
-  belongs_to :brand
-  # belongs_to :category
   
+  has_many :perks
+
   mount_uploader :image, ImageUploader
 
   # validates_presence_of :category_id, :subtitle, :title
@@ -14,11 +13,5 @@ class Perk < ActiveRecord::Base
   #   :category => [:title, :subtitle]
   # }
 
-  # def self.text_search(query)
-  #   if query.present?
-  #     search(query)
-  #   else
-  #     scoped
-  #   end
-  # end
+
 end
