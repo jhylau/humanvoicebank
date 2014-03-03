@@ -61,29 +61,30 @@ div.perks-heading {
 /* THUMBNAILS */
 .content {
 	min-height: 800px;
-	.thumbnail {
-		&:hover {
-			background-color: lightgrey;
-		}
-		cursor: pointer; cursor: hand;
-		text-align: center;
-		.perk-image-container {
-			height: 200px;
-		}
-		.perk-image-container .img-responsive {
-			display: block;
-			width: auto;
-			min-height: 100%;
-			max-height: 100%;
-			margin: 0 auto;
-		}
-		div.caption h3 {
-		  	font-size: 20px;
-		 }
-	}
-
-
 }
+
+.thumbnail {
+	&:hover {
+		background-color: lightgrey;
+	}
+	cursor: pointer; cursor: hand;
+	text-align: center;
+	.perk-image-container {
+		height: 200px;
+	}
+	.perk-image-container .img-responsive {
+		display: block;
+		width: auto;
+		min-height: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+	}
+	div.caption h3 {
+	  	font-size: 20px;
+	 }
+}
+
+
 @media (min-width: 992px) {
   .sidebar {
     position: absolute;

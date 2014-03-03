@@ -261,11 +261,13 @@ h1, h2, h3, h4, h5, h6, a, p {
 	 	a.email {
 	 		color: white;
 	 	}
-	 	a.icon {
+	 	a.fa {
+	 		padding-top: 5px;	
 	 		font-size: 30px;
 	 		color: white;
+	 		margin-right: 5px;
 	 	}
-	 	a.icon:hover {
+	 	a.fa:hover {
 	 		text-decoration: none;
 	 		color: grey;
 	 	}
