@@ -2,7 +2,7 @@
 @import "bootstrap/mixins";
 @import "variables/global";
 
-/** GENERAL */
+/** GENERAL PERKS */
 
 div.perks {
 	margin-top: ($full-navbar-height + 20px);
@@ -30,6 +30,7 @@ div.perks-heading {
 		padding-bottom: 10px;
 	}
 }
+
 .sidebar {
   	background-color: white;
   	.tab-pane {
