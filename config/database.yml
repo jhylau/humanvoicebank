@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: cleanpowerperks_development
+  database: humanvoicebank_development
   pool: 5
   password:
 
@@ -40,13 +40,13 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: cleanpowerperks_test
+  database: humanvoicebank_test
   pool: 5
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: cleanpowerperks_production
+  database: humanvoicebank_production
   pool: 5
   password:

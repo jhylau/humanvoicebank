@@ -1,125 +1,51 @@
- <!-- Carousel
-    ================================================== -->
-     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-      <!-- Indicators -->
-<!--       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol> -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <img alt: "Pathway to Sustainability" title: "Pathway to Sustainability" class='img-landing'></img>
-          <div class="container">
-            <div class="carousel-caption">
-              <%= image_tag('cpp_logo_landing_yellow.png', :alt => "Clean Power Perks", :title => "Clean Power Perks", :class=>'img-responsive landing-logo')  %>  
-              <h1>Save Money by Buying Clean Energy</h1>
-              <p>We reward people and businesses for consciously choosing clean energy</p>
-       <!--        <p><a class="btn btn-lg btn-primary btn-benefits" href="#" role="button">Learn More</a> -->
-              <a class="btn btn-lg" id='btn-sign-up' href="#" role="button"><i class="fa fa-gift"> Get Perks Now</i></a>
-              <h4>Existing clean energy customers get free access!</h4>
-            </div>
-          </div>
-    </div>
-  </div><!-- /.carousel -->
 
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-    <div class="second-section">
-      <div class="container marketing">
-
-       <!-- Three columns of text below the carousel -->
-        <div class="row featurette how-it-works">
-          <div class="col-lg-4">
-            <i class="fa fa-sun-o"></i>
-            <h2>1 - Get Clean Energy</h2>
-            <p>Easy access to a wide range of providers</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <i class="fa fa-gift"></i>
-            <h2>2 - Browse Perks</h2>
-            <p>Green businesses, and awesome deals.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4"> 
-            <i class="fa fa-money"></i> 
-            <h2>3 - Save $$$</h2>
-            <p>Save money and our planet at the same time.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-      </div>
-    </div>
-      <!-- START THE FEATURETTES -->
-  <div class="fourth-section">
-    <div class="container marketing">
-      <div class="row featurette">
-        <div class="col-md-5">
-          <h2 class="featurette-heading" id="featurette-sub-heading">Perk of the Month</h2>
-          <%= image_tag("prana.jpeg", :class=>'img-responsive featurette-image') %>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-md-7">
-          <h2 class="featurette-heading" id="featurette-sub-heading">If you're going to shop,<br><span class="text-muted"> #shopclean.</span></h2>
-          <h4>A CleanPowerPerks initiative - green businesses and perks.</h4>
-          <p><a class="btn btn-links-2" href="#" role="button">Learn More  <icon class="fa fa-arrow-right"></i></a></p>
-        </div>
-      </div><!-- /.row -->
-    </div>
+<div class="container">
+  <div class="row">
+   <audio controls autoplay></audio>    
+    <input onclick="startRecording()" type="button" value="start recording" />
+    <input onclick="stopRecording()" type="button" value="stop recording and play" />
   </div>
- 
+</div>
 
-    <div class="third-section">
-      <div class="container marketing">
-       <div class="row featurette">
-          <h3 class="deals-heading"><a>Popular Perks</a></h3>
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <div class="perk-image-container">
-                <%= image_tag("burts_bees.jpg", :class=>'img-responsive featurette-image') %>
-              </div>
-              <div class="caption">
-                <h3>Burt's Bees</h3>
-                <h5>Up to 50% Off</h5>
-                <p><i class="fa fa-map-marker"></i> Online</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <div class="perk-image-container">
-                <%= image_tag("brooklyn_boulders.jpg", :class=>'img-responsive featurette-image') %>
-              </div>
-              <div class="caption">
-                <h3>Brooklyn Boulders</h3>
-                <h5>Up to 50% Off</h5>
-                <p><i class="fa fa-map-marker"></i> Somerville, MA</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <div class="perk-image-container">
-                <%= image_tag("burts_bees.jpg", :class=>'img-responsive featurette-image') %>
-              </div>
-              <div class="caption">
-                <h3>Burt's Bees</h3>
-                <h5>Up to 50% Off</h5>
-                <p><i class="fa fa-map-marker"></i> Online</p>
-              </div>
-            </div>
-          </div>
-           <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <div class="perk-image-container">
-                <%= image_tag("brooklyn_boulders.jpg", :class=>'img-responsive featurette-image') %>
-              </div>
-              <div class="caption">
-                <h3>Brooklyn Boulders</h3>
-                <h5>Up to 50% Off</h5>
-                <p><i class="fa fa-map-marker"></i> Somerville, MA</p>
-              </div>
-            </div>
-          </div>
-        </div><!-- /.row -->
-    </div><!-- /.container -->
+<script>
+  var onFail = function(e) {
+    console.log('Rejected!', e);
+  };
+
+  var onSuccess = function(s) {
+    var context = new webkitAudioContext();
+    var mediaStreamSource = context.createMediaStreamSource(s);
+    recorder = new Recorder(mediaStreamSource);
+    
+
+    // audio loopback
+    // mediaStreamSource.connect(context.destination);
+  }
+
+  window.URL = window.URL || window.webkitURL;
+  navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+  var recorder;
+  var audio = document.querySelector('audio');
+
+  if (!navigator.getUserMedia){
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                  navigator.mozGetUserMedia || navigator.msGetUserMedia;
+  }
+  if (navigator.getUserMedia){
+      navigator.getUserMedia({audio:true}, onSuccess, function(e) {
+      alert('Error capturing audio.');
+      });
+  } else alert('getUserMedia not supported in this browser.');
+
+  function startRecording() {
+    recorder.record();
+  }
+
+  function stopRecording() {
+    recorder.stop();
+    recorder.exportWAV(function(s) {
+      audio.src = window.URL.createObjectURL(s);
+    });
+  }
+</script>
