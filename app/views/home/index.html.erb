@@ -1,13 +1,16 @@
 
 <div class="container">
   <div class="row">
-   <audio controls autoplay></audio>    
+    <audio controls autoplay></audio>    
     <input onclick="startRecording()" type="button" value="start recording" />
     <input onclick="stopRecording()" type="button" value="stop recording and play" />
   </div>
 </div>
 
 <script>
+  window.URL = window.URL || window.webkitURL;
+  navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
   var onFail = function(e) {
     console.log('Rejected!', e);
   };
@@ -16,14 +19,9 @@
     var context = new webkitAudioContext();
     var mediaStreamSource = context.createMediaStreamSource(s);
     recorder = new Recorder(mediaStreamSource);
-    
-
     // audio loopback
     // mediaStreamSource.connect(context.destination);
   }
-
-  window.URL = window.URL || window.webkitURL;
-  navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
   var recorder;
   var audio = document.querySelector('audio');
@@ -38,14 +36,28 @@
       });
   } else alert('getUserMedia not supported in this browser.');
 
+
+
   function startRecording() {
     recorder.record();
   }
 
   function stopRecording() {
     recorder.stop();
+    // recorder.getBuffer(getBufferCallback);
     recorder.exportWAV(function(s) {
       audio.src = window.URL.createObjectURL(s);
     });
+  }
+
+  function getBufferCallback(buffers) {
+    // var newSource = audioContext.createBufferSource();
+    // var newBuffer = audioContext.createBuffer( 2, buffers[0].length, audioContext.sampleRate );
+    // newBuffer.getChannelData(0).set(buffers[0]);
+    // newBuffer.getChannelData(1).set(buffers[1]);
+    getPitch(buffers[0]);
+    // newSource.buffer = newBuffer;
+    // newSource.connect( audioContext.destination );
+    // newSource.start(0);
   }
 </script>
