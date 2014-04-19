@@ -31,6 +31,8 @@ gem 'hpricot'
 gem 'roadie'
 gem 'fastercsv'
 gem 'will_paginate'
+gem 'chart-js-rails'
+
 # gem 'font-awesome-sass'
 
 # Gems used only for assets and not required

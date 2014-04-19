@@ -42,6 +42,21 @@
       recording = true;
     }
 
+    this.getFreq = function(cb) {
+      currCallback = cb || config.callback;
+      worker.postMessage({ command: 'getFreq' });
+    }
+
+    this.getDb = function(cb) {
+      currCallback = cb || config.callback;
+      worker.postMessage({ command: 'getDb' });
+    }
+
+    this.getDbFreq = function(cb) {
+      currCallback = cb || config.callback;
+      worker.postMessage({ command: 'getDbFreq' });
+    }
+
     this.stop = function(){
       recording = false;
     }

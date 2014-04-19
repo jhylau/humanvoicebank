@@ -7,6 +7,8 @@
   </div>
 </div>
 
+<canvas id="myChart" width="200" height="200"></canvas>
+
 <script>
   window.URL = window.URL || window.webkitURL;
   navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -38,26 +40,65 @@
 
 
 
+  $(document).ready(function() {
+    
+  });
   function startRecording() {
     recorder.record();
   }
 
   function stopRecording() {
     recorder.stop();
-    // recorder.getBuffer(getBufferCallback);
     recorder.exportWAV(function(s) {
       audio.src = window.URL.createObjectURL(s);
     });
+    recorder.getDbFreq(function(array) {
+      console.log(array);
+      var data = {
+        labels : array[0],
+        datasets : [
+            {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              pointColor : "rgba(220,220,220,1)",
+              pointStrokeColor : "#fff",
+              data : array[0]
+            },
+            {
+              fillColor : "rgba(151,187,205,0.5)",
+              strokeColor : "rgba(151,187,205,1)",
+              pointColor : "rgba(151,187,205,1)",
+              pointStrokeColor : "#fff",
+              data : array[1]
+            }
+          ]
+      }
+      myNewChart = new Chart($("#myChart").get(0).getContext("2d")).Line(data)
+    }); 
+
+    // debugger
+    //This will get the first returned node in the jQuery collection.
+    // var options = [];
+    // var data = {
+    //   labels : ["January","February","March","April","May","June","July"],
+    //   datasets : [
+    //     {
+    //       fillColor : "rgba(220,220,220,0.5)",
+    //       strokeColor : "rgba(220,220,220,1)",
+    //       pointColor : "rgba(220,220,220,1)",
+    //       pointStrokeColor : "#fff",
+    //       data : [65,59,90,81,56,55,40]
+    //     },
+    //     {
+    //       fillColor : "rgba(151,187,205,0.5)",
+    //       strokeColor : "rgba(151,187,205,1)",
+    //       pointColor : "rgba(151,187,205,1)",
+    //       pointStrokeColor : "#fff",
+    //       data : [28,48,40,19,96,27,100]
+    //     }
+    //   ]
+    // }
+    // myNewChart = new Chart($("#myChart").get(0).getContext("2d")).Line(data)
   }
 
-  function getBufferCallback(buffers) {
-    // var newSource = audioContext.createBufferSource();
-    // var newBuffer = audioContext.createBuffer( 2, buffers[0].length, audioContext.sampleRate );
-    // newBuffer.getChannelData(0).set(buffers[0]);
-    // newBuffer.getChannelData(1).set(buffers[1]);
-    getPitch(buffers[0]);
-    // newSource.buffer = newBuffer;
-    // newSource.connect( audioContext.destination );
-    // newSource.start(0);
-  }
 </script>

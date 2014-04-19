@@ -1,7 +1,11 @@
 var recLength = 0,
-  recBuffersL = [],
-  recBuffersR = [],
-  sampleRate;
+recBuffersL = [],
+recBuffersR = [],
+sampleRate,
+buffersLFreq = [],
+buffersRFreq = [],
+buffersLDb = [],
+buffersRDb = [];
 
 this.onmessage = function(e){
   switch(e.data.command){
@@ -20,23 +24,42 @@ this.onmessage = function(e){
     case 'clear':
       clear();
       break;
+    case 'getFreq':
+      getFreq();
+      break;
+    case 'getDb':
+      getDb();
+      break;
+    case 'getDbFreq':
+      getDbFreq();
+      break;
   }
 };
 
-function getPitch(audioBuffer) {
+function getPitch(audioBufferLeft, audioBufferRight) {
     /* Create a new pitch detector */
   sampleRate = 44100;
-  var pitch = new PitchAnalyzer(sampleRate);
+  var pitchLeft = new PitchAnalyzer(sampleRate);
   /* Copy samples to the internal buffer */
-  pitch.input(audioBuffer);
+  pitchLeft.input(audioBufferLeft);
   /* Process the current input in the internal buffer */
-  pitch.process();
-  var tone = pitch.findTone();
-  debugger
-  if (tone === null) {
+  pitchLeft.process();
+  var pitchRight = new PitchAnalyzer(sampleRate);
+  /* Copy samples to the internal buffer */
+  pitchRight.input(audioBufferRight);
+  /* Process the current input in the internal buffer */
+  pitchRight.process();
+  var toneLeft = pitchLeft.findTone();
+  var toneRight = pitchLeft.findTone();
+
+  if (toneLeft === null) {
       console.log('No tone found!');
   } else {
-      console.log('Found a tone, frequency:' + tone.freq.toString() + 'volume:' +  tone.db.toString());
+     buffersLFreq.push(Math.round(toneLeft.freq));
+     buffersRFreq.push(Math.round(toneRight.freq));
+     buffersLDb.push(-Math.round(toneLeft.db));
+     buffersRDb.push(-Math.round(toneRight.db));
+     console.log('Tone Left Frequency:' + toneLeft.freq.toString() + 'Tone Right Frequency:' + toneRight.freq.toString() + 'Left volume:' +  toneLeft.db.toString() + 'Right volume:' +  toneLeft.db.toString());
   }
 }
 
@@ -47,9 +70,7 @@ function init(config){
 function record(inputBuffer){
   recBuffersL.push(inputBuffer[0]);
   recBuffersR.push(inputBuffer[1]);
-  debugger
-  getPitch(inputBuffer[0]);
-  getPitch(inputBuffer[1]);
+  getPitch(inputBuffer[0],inputBuffer[1]);
   recLength += inputBuffer[0].length;
 }
 
@@ -59,7 +80,6 @@ function exportWAV(type){
   var interleaved = interleave(bufferL, bufferR);
   var dataview = encodeWAV(interleaved);
   var audioBlob = new Blob([dataview], { type: type });
-
   this.postMessage(audioBlob);
 }
 
@@ -68,6 +88,18 @@ function getBuffer() {
   buffers.push( mergeBuffers(recBuffersL, recLength) );
   buffers.push( mergeBuffers(recBuffersR, recLength) );
   this.postMessage(buffers);
+}
+
+function getFreq() {
+  this.postMessage(buffersLFreq);
+}
+
+function getDb() {
+  this.postMessage(buffersLDb);
+}
+
+function getDbFreq() {
+  this.postMessage([buffersLDb,buffersLFreq]);
 }
 
 function clear(){
