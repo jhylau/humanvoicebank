@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20140418022624) do
 
   create_table "sentences", force: true do |t|
     t.string "sentence"
+    t.string "phonetic"
+    t.string "flag"
+    t.string "filename"
   end
 
   create_table "users", force: true do |t|
