@@ -60,6 +60,7 @@ GEM
       warden (~> 1.2.3)
     equalizer (0.0.9)
     erubis (2.7.0)
+    excon (0.33.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -76,8 +77,26 @@ GEM
       multi_json (>= 1.3)
       rack-oauth2 (>= 0.14.4)
       tzinfo
+    fog (1.22.0)
+      fog-brightbox
+      fog-core (~> 1.21, >= 1.21.1)
+      fog-json
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.0.2)
+      fog-core
+      fog-json
+    fog-core (1.22.0)
+      builder
+      excon (~> 0.33)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.0)
+      multi_json (~> 1.0)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
+    formatador (0.2.4)
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
     haml (4.0.5)
@@ -118,6 +137,9 @@ GEM
     multi_json (1.8.4)
     multipart-post (2.0.0)
     nested_form (0.3.2)
+    net-scp (1.2.0)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.8.0)
     newrelic_rpm (3.7.2.192)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -278,6 +300,7 @@ DEPENDENCIES
   fancybox-rails
   fastercsv
   fb_graph
+  fog
   friendly_id
   hpricot
   jquery-rails
