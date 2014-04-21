@@ -54,6 +54,10 @@ function getPitch(audioBufferLeft, audioBufferRight) {
 
   if (toneLeft === null) {
       console.log('No tone found!');
+      buffersLFreq.push(Math.round(0));
+      buffersRFreq.push(Math.round(0));
+      buffersLDb.push(-Math.round(0));
+      buffersRDb.push(-Math.round(0));
   } else {
      buffersLFreq.push(Math.round(toneLeft.freq));
      buffersRFreq.push(Math.round(toneRight.freq));

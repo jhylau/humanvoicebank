@@ -4,10 +4,13 @@
     <audio controls autoplay></audio>    
     <input onclick="startRecording()" type="button" value="start recording" />
     <input onclick="stopRecording()" type="button" value="stop recording and play" />
+    <input onclick="createGraph()" type="button" value="create graph" />
+  </div>
+  <div class="row">
+    <canvas id="myChart" width="300" height="300"></canvas>
   </div>
 </div>
 
-<canvas id="myChart" width="200" height="200"></canvas>
 
 <script>
   window.URL = window.URL || window.webkitURL;
@@ -38,11 +41,6 @@
       });
   } else alert('getUserMedia not supported in this browser.');
 
-
-
-  $(document).ready(function() {
-    
-  });
   function startRecording() {
     recorder.record();
   }
@@ -52,53 +50,63 @@
     recorder.exportWAV(function(s) {
       audio.src = window.URL.createObjectURL(s);
     });
+  }
+  
+  function createGraph() {
     recorder.getDbFreq(function(array) {
       console.log(array);
+      label = [];
+      count = 1;
+      array[0].forEach(function() {
+        label.push(count)
+        count = count + 1;
+      })
       var data = {
-        labels : array[0],
+        labels : label,
         datasets : [
-            {
-              fillColor : "rgba(220,220,220,0.5)",
-              strokeColor : "rgba(220,220,220,1)",
-              pointColor : "rgba(220,220,220,1)",
-              pointStrokeColor : "#fff",
-              data : array[0]
-            },
-            {
-              fillColor : "rgba(151,187,205,0.5)",
-              strokeColor : "rgba(151,187,205,1)",
-              pointColor : "rgba(151,187,205,1)",
-              pointStrokeColor : "#fff",
-              data : array[1]
-            }
-          ]
+          {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,1)",
+            pointColor : "rgba(220,220,220,1)",
+            pointStrokeColor : "#fff",
+            data : array[0]
+          },
+          {
+            fillColor : "rgba(151,187,205,0.5)",
+            strokeColor : "rgba(151,187,205,1)",
+            pointColor : "rgba(151,187,205,1)",
+            pointStrokeColor : "#fff",
+            data : array[1]
+          }
+        ]
       }
-      myNewChart = new Chart($("#myChart").get(0).getContext("2d")).Line(data)
-    }); 
-
+      myNewChart = new Chart($("#myChart").get(0).getContext("2d")).Line(data, {scaleShowLabels:false}); 
+    })
+  }
     // debugger
     //This will get the first returned node in the jQuery collection.
     // var options = [];
-    // var data = {
-    //   labels : ["January","February","March","April","May","June","July"],
-    //   datasets : [
-    //     {
-    //       fillColor : "rgba(220,220,220,0.5)",
-    //       strokeColor : "rgba(220,220,220,1)",
-    //       pointColor : "rgba(220,220,220,1)",
-    //       pointStrokeColor : "#fff",
-    //       data : [65,59,90,81,56,55,40]
-    //     },
-    //     {
-    //       fillColor : "rgba(151,187,205,0.5)",
-    //       strokeColor : "rgba(151,187,205,1)",
-    //       pointColor : "rgba(151,187,205,1)",
-    //       pointStrokeColor : "#fff",
-    //       data : [28,48,40,19,96,27,100]
-    //     }
-    //   ]
-    // }
-    // myNewChart = new Chart($("#myChart").get(0).getContext("2d")).Line(data)
-  }
+
+
+     // var data = {
+        //   labels : ["January","February","March","April","May","June","July"],
+        //   datasets : [
+        //     {
+        //       fillColor : "rgba(220,220,220,0.5)",
+        //       strokeColor : "rgba(220,220,220,1)",
+        //       pointColor : "rgba(220,220,220,1)",
+        //       pointStrokeColor : "#fff",
+        //       data : [65,59,90,81,56,55,40]
+        //     },
+        //     {
+        //       fillColor : "rgba(151,187,205,0.5)",
+        //       strokeColor : "rgba(151,187,205,1)",
+        //       pointColor : "rgba(151,187,205,1)",
+        //       pointStrokeColor : "#fff",
+        //       data : [28,48,40,19,96,27,100]
+        //     }
+        //   ]
+        // }
+
 
 </script>
