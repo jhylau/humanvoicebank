@@ -1,17 +1,17 @@
 HumanVoiceBank!
 
-SETUP on terminal
+--SETUP on terminal
 
-git clone git@github.com:jhylau/humanvoicebank.git
-rvm use 2.0.0
-rvm gemset create humanvoicebank
-bundle
-rake db:create
-rake db:migrate
-rake import
-rails s
-Then visit localhost:3000
+  git clone git@github.com:jhylau/humanvoicebank.git
+  rvm use 2.0.0
+  rvm gemset create humanvoicebank
+  bundle
+  rake db:create
+  rake db:migrate
+  rake import
+  rails s
+  Then visit localhost:3000
 
-HOW IT WORKS
+--HOW IT WORKS
 coming soon...
 
